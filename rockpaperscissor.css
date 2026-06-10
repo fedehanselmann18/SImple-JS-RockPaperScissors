@@ -1,0 +1,107 @@
+:root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --panel-border: #2a3441;
+    --text: #f3f6fb;
+    --muted: #98a6b8;
+    --rock: #ff7a59;
+    --paper: #5cc8ff;
+    --scissors: #a78bfa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.game-page {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 3rem 1.5rem;
+    background:
+        radial-gradient(circle at top, rgba(92, 200, 255, 0.14), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.14), transparent 24%),
+        linear-gradient(180deg, #0d1117 0%, #070b10 100%);
+    color: var(--text);
+    font-family: Avenir Next, Trebuchet MS, sans-serif;
+}
+
+.title {
+    width: 100%;
+    margin: 0 0 0.25rem;
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.move-button {
+    min-width: 160px;
+    padding: 1rem 1.4rem;
+    border: 1px solid var(--panel-border);
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    color: var(--text);
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 18px 40px rgba(0, 0, 0, 0.28);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.move-button:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+}
+
+.move-button:active {
+    transform: translateY(-1px);
+}
+
+.move-rock:hover {
+    border-color: rgba(255, 122, 89, 0.75);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 18px 40px rgba(0, 0, 0, 0.28),
+        0 0 0 1px rgba(255, 122, 89, 0.18);
+}
+
+.move-paper:hover {
+    border-color: rgba(92, 200, 255, 0.75);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 18px 40px rgba(0, 0, 0, 0.28),
+        0 0 0 1px rgba(92, 200, 255, 0.18);
+}
+
+.move-scissors:hover {
+    border-color: rgba(167, 139, 250, 0.75);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 18px 40px rgba(0, 0, 0, 0.28),
+        0 0 0 1px rgba(167, 139, 250, 0.2);
+}
+
+@media (max-width: 640px) {
+    body.game-page {
+        align-content: center;
+        padding: 2rem 1rem;
+    }
+
+    .move-button {
+        width: 100%;
+        max-width: 320px;
+    }
+}

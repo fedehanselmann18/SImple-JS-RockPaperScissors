@@ -73,8 +73,7 @@ function RpsResult(playerMove){
 
     localStorage.setItem('score', JSON.stringify(score));
 
-    alert(`You picked ${playerMove} and the oponent ${computerMove} , ${result}
-            The score is : Wins = ${score.wins}, Losses = ${score.losses}, Ties : ${score.ties} `);
+    alert(`You picked ${playerMove} and the oponent ${computerMove} , ${result}\nThe score is : Wins = ${score.wins}, Losses = ${score.losses}, Ties : ${score.ties} `);
 }
 
 function resetScore(){

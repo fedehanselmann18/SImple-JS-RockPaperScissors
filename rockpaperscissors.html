@@ -7,29 +7,34 @@
     <link rel="stylesheet" href="rockpaperscissor.css">
 </head>
 <body class="game-page">
-    <h3 class="title">Choose and play!</h3>
+    <main class="game-shell">
+        <h3 class="title">Play rock, paper scissors against your computer!</h3>
 
-    <button class="move-button move-rock"
-    onclick="RpsResult('Rock')"
-    >
-        Rock
-    </button>
+        <div class="moves-row">
+            <button class="move-button move-rock"
+            onclick="RpsResult('Rock')"
+            >
+                Rock
+            </button>
 
-    <button class="move-button move-paper"
-    onclick="RpsResult('Paper')"
-    >
-        Paper
-    </button>
+            <button class="move-button move-paper"
+            onclick="RpsResult('Paper')"
+            >
+                Paper
+            </button>
 
-        <button class="move-button move-scissors"
-    onclick="RpsResult('Scissors')"
-    >
-        Scissors
-    </button>
-    <button class="move-button"
-    onclick="resetScore()">
-        Reset Score
-    </button>
+            <button class="move-button move-scissors"
+            onclick="RpsResult('Scissors')"
+            >
+                Scissors
+            </button>
+        </div>
+
+        <button class="reset-button"
+        onclick="resetScore()">
+            Reset Score
+        </button>
+    </main>
     <script src = "rockpaperscissors.js">
     </script>
 

@@ -4,7 +4,15 @@ const score = JSON.parse(localStorage.getItem('score')) || {
     ties: 0
 };
 
+
 localStorage.setItem('score', JSON.stringify(score));
+
+function UpdateScoreElement() {
+    document.querySelector('.js-score').innerHTML = 
+    `The score is : Wins = ${score.wins}, Losses = ${score.losses}, Ties : ${score.ties}`
+}
+
+UpdateScoreElement()
 
 function pickComputerMove() {
     const randomNumber = Math.random()
@@ -13,11 +21,9 @@ function pickComputerMove() {
     if (randomNumber>=0 && randomNumber<= 1/3){
         computerMove = 'Rock';
     }
-
     else if (randomNumber>=1/3 && randomNumber<= 2/3){
         computerMove = 'Paper';
     }
-
     else if (randomNumber>=2/3 && randomNumber<= 1){
         computerMove = 'Scissors';
     }
@@ -72,14 +78,17 @@ function RpsResult(playerMove){
     }
 
     localStorage.setItem('score', JSON.stringify(score));
-
-    alert(`You picked ${playerMove} and the oponent ${computerMove} , ${result}\nThe score is : Wins = ${score.wins}, Losses = ${score.losses}, Ties : ${score.ties} `);
+    document.querySelector('.js-moves').innerHTML = `You --> ${playerMove} vs ${computerMove} --> Computer.\nResult = ${result}`
+    UpdateScoreElement()
 }
+
+
 
 function resetScore(){
     score.wins = 0
     score.ties = 0
     score.losses = 0
     localStorage.setItem('score', JSON.stringify(score));
-    alert(`The score is : Wins = ${score.wins}, Losses = ${score.losses}, Ties : ${score.ties}`)
+    document.querySelector('.js-moves').innerHTML = 'SCORE RESETED TO 0'
+    UpdateScoreElement()
 }

@@ -94,3 +94,21 @@ function resetScore(){
     document.querySelector('.js-moves').innerHTML = 'SCORE RESETED TO 0'
     UpdateScoreElement()
 }
+
+function autoPlay () {
+    const autoPlayButton = document.querySelector('.auto-play-button')
+
+    if (autoPlayButton.innerText === 'Autoplay'){
+        autoPlayButton.innerText = 'Autoplaying...'
+        autoPlayButton.classList.add('pressed')
+        intervalId = setInterval(() => {
+            const playerMove = pickComputerMove()
+            RpsResult(playerMove)
+        }, 1500)
+    }
+    else {
+        autoPlayButton.innerText = 'Autoplay'
+        autoPlayButton.classList.remove('pressed')
+        clearInterval(intervalId)
+    }
+}

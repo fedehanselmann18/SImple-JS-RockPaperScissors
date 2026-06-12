@@ -286,3 +286,7 @@ body {
 		width: 100%;
 	}
 }
+
+.pressed{
+	background-color: red;
+}

@@ -78,7 +78,9 @@ function RpsResult(playerMove){
     }
 
     localStorage.setItem('score', JSON.stringify(score));
-    document.querySelector('.js-moves').innerHTML = `You --> ${playerMove} vs ${computerMove} --> Computer.\nResult = ${result}`
+    document.querySelector('.js-moves').innerHTML = `You --> <img src="images/${playerMove}.png" class="move-icon result-icon" alt="">
+    vs  <img src="images/${computerMove}.png" class="move-icon result-icon" alt="">--> Computer.
+    \nResult = ${result}`
     UpdateScoreElement()
 }
 

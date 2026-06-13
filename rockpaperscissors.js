@@ -112,3 +112,9 @@ function autoPlay () {
         clearInterval(intervalId)
     }
 }
+
+document.querySelector('.js-rock-button').addEventListener('click', () => RpsResult('Rock'))
+document.querySelector('.js-paper-button').addEventListener('click', () => RpsResult('Paper'))
+document.querySelector('.js-scissors-button').addEventListener('click', () => RpsResult('Scissors'))
+document.querySelector('.js-reset-button').addEventListener('click', resetScore)
+document.querySelector('.js-autoplay-button').addEventListener('click', autoPlay)

@@ -11,20 +11,17 @@
         <h1 class="title">Play rock, paper scissors against your computer!</h1>
 
         <div class="moves-row">
-            <button class="move-button move-rock"
-            onclick="RpsResult('Rock')"
+            <button class="move-button move-rock js-rock-button"
             >
             <img src="images/Rock.png" class="move-icon" alt="">
             </button>
 
-            <button class="move-button move-paper"
-            onclick="RpsResult('Paper')"
+            <button class="move-button move-paper js-paper-button"
             >
             <img src="images/Paper.png" class="move-icon" alt="">
             </button>
 
-            <button class="move-button move-scissors"
-            onclick="RpsResult('Scissors')"
+            <button class="move-button move-scissors js-scissors-button"
             >
             <img src="images/Scissors.png" class="move-icon" alt="">
             </button>
@@ -33,12 +30,10 @@
         <p class="js-moves"></p>
         <p class="js-score"></p>
 
-        <button class=" reset-button auto-play-button"
-        onclick="autoPlay()">
+        <button class=" reset-button auto-play-button js-autoplay-button"">
             Autoplay
         </button>
-        <button class="reset-button"
-        onclick="resetScore()">
+        <button class="reset-button js-reset-button">
             Reset Score
         </button>
     </main>

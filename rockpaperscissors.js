@@ -9,14 +9,14 @@ localStorage.setItem('score', JSON.stringify(score));
 
 function UpdateScoreElement() {
     document.querySelector('.js-score').innerHTML = 
-    `The score is : Wins = ${score.wins}, Losses = ${score.losses}, Ties : ${score.ties}`
+    `The score is : Wins = ${score.wins}, Losses = ${score.losses}, Ties : ${score.ties}`;
 }
 
-UpdateScoreElement()
+UpdateScoreElement();
 
 function pickComputerMove() {
     const randomNumber = Math.random()
-    let computerMove = ''
+    let computerMove = '';
 
     if (randomNumber>=0 && randomNumber<= 1/3){
         computerMove = 'Rock';
@@ -115,20 +115,20 @@ function autoPlay () {
 
 function playGameKeyboard(event){
     if (event.key === 'r'){
-        RpsResult('Rock')
+        RpsResult('Rock');
     }
     else if (event.key === 'p'){
-        RpsResult('Paper')
+        RpsResult('Paper');
     }
     else if (event.key === 's'){
-        RpsResult('Scissors')
+        RpsResult('Scissors');
     }
 }
 
 
-document.querySelector('.js-rock-button').addEventListener('click', () => RpsResult('Rock'))
-document.querySelector('.js-paper-button').addEventListener('click', () => RpsResult('Paper'))
-document.querySelector('.js-scissors-button').addEventListener('click', () => RpsResult('Scissors'))
-document.querySelector('.js-reset-button').addEventListener('click', resetScore)
-document.querySelector('.js-autoplay-button').addEventListener('click', autoPlay)
-document.body.addEventListener('keydown', playGameKeyboard)
+document.querySelector('.js-rock-button').addEventListener('click', () => RpsResult('Rock'));
+document.querySelector('.js-paper-button').addEventListener('click', () => RpsResult('Paper'));
+document.querySelector('.js-scissors-button').addEventListener('click', () => RpsResult('Scissors'));
+document.querySelector('.js-reset-button').addEventListener('click', resetScore);
+document.querySelector('.js-autoplay-button').addEventListener('click', autoPlay);
+document.body.addEventListener('keydown', playGameKeyboard);

@@ -113,8 +113,22 @@ function autoPlay () {
     }
 }
 
+function playGameKeyboard(event){
+    if (event.key === 'r'){
+        RpsResult('Rock')
+    }
+    else if (event.key === 'p'){
+        RpsResult('Paper')
+    }
+    else if (event.key === 's'){
+        RpsResult('Scissors')
+    }
+}
+
+
 document.querySelector('.js-rock-button').addEventListener('click', () => RpsResult('Rock'))
 document.querySelector('.js-paper-button').addEventListener('click', () => RpsResult('Paper'))
 document.querySelector('.js-scissors-button').addEventListener('click', () => RpsResult('Scissors'))
 document.querySelector('.js-reset-button').addEventListener('click', resetScore)
 document.querySelector('.js-autoplay-button').addEventListener('click', autoPlay)
+document.body.addEventListener('keydown', playGameKeyboard)
